@@ -6,8 +6,15 @@
 using namespace std;
 
 //--------------------------------------------------------------------------------------------------------------------------
+int menu();
+void menu_Selection();
+void add_Cars();
+void view_Cars();
+void search_Cars();
+
 int main()
 	{
+		
 		int size = 4;
 		Car* carPTR[size];
 		
@@ -28,5 +35,78 @@ int main()
 		//Get Car Type (Can be used for searching by car type)
 		cout << "First Car's type is: " << carPTR[0] -> getVehicleType() << endl;
 		
+		
+		menu_Selection();
+		
 		return 0;
 	}
+	
+	
+int menu(){
+	int choice;
+	cout << "\t\tMenu\n"
+		 << "\t\t------------------\n"
+		 << "\t\t1. Add Cars\n"
+		 << "\t\t2. View All Cars\n"
+		 << "\t\t3. Search For Cars\n"
+		 << "\t\t4. Quit\n"
+		 << "\t\tChoose An Option: ";
+	cin >> choice;
+	return choice;
+}
+		
+void menu_Selection(){
+	int choice;
+	do{
+		choice = menu();
+		switch(choice){
+			case 1: {
+				add_Cars();
+				system("CLS");
+				break;
+			}
+			case 2: {
+				view_Cars();
+				system("CLS");
+				break;
+			}
+			case 3: {
+				search_Cars();
+				system("CLS");
+				break;
+			}
+			case 4: {
+				system("CLS");
+				cout << "\nGoodbye!\n";
+				system("PAUSE");
+				break;
+			}
+			default: {
+				cout << "Invalid Choice.\n";
+				system("PAUSE");
+				system("CLS");
+				break;
+			}
+		}
+	}while(choice != 4);
+}	
+
+void add_Cars(){
+	
+}
+
+void view_Cars(){
+	
+}
+
+void search_Cars(){
+	
+}
+
+
+
+
+
+
+
+	
