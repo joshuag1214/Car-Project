@@ -78,13 +78,13 @@ int main()
 	
 int menu(){
 	int choice;
-	cout << "\t\tMenu\n"
-		 << "\t\t------------------\n"
-		 << "\t\t1. Add Cars\n"
-		 << "\t\t2. View All Cars\n"
-		 << "\t\t3. Search For Cars\n"
-		 << "\t\t4. Quit\n"
-		 << "\t\tChoose An Option: ";
+	cout << "Menu\n"
+		 << "------------------\n"
+		 << "1. Add Cars\n"
+		 << "2. View All Cars\n"
+		 << "3. Search For Cars\n"
+		 << "4. Quit\n"
+		 << "Choose An Option: ";
 	cin >> choice;
 	return choice;
 }
@@ -322,6 +322,7 @@ int add_Cars(int* size, Car* *cars, int* count)
 	}
 
 void view_Cars(int* size, Car* *cars, int* count){
+	system("CLS");
 	for(int i = 0; i < *count; i++)
 			{
 				cars[i] -> printInfo();
