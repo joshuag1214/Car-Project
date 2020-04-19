@@ -16,7 +16,15 @@ class Car
 				{
 					return vehiclePrice;
 				}
+			string getVehicleMake();
 			string getVehicleType();
+			string getVehicleModel();
+			int getVehicleYear();
+			int getEngineCylinders();
+			int getVehicleSeats();
+			int getTransmissionGears();
+			double getMilesPerGallon();
+			double getVehiclePrice();
 	
 		protected:
 			string vehicleType, vehicleMake, vehicleModel;
@@ -51,5 +59,36 @@ string Car::getVehicleType()
 	{
 		return vehicleType;
 	}
-	
+string Car::getVehicleMake()
+	{
+		return vehicleMake;
+	}
+string Car::getVehicleModel()
+	{
+		return vehicleModel;
+	}
+int Car::getVehicleYear()
+	{
+		return vehicleYear;
+	}
+int Car::getEngineCylinders()
+	{
+		return engineCylinders;
+	}
+int Car::getVehicleSeats()
+	{
+		return vehicleSeats;
+	}
+int Car::getTransmissionGears()
+	{
+		return transmissionGears;
+	}
+double Car::getMilesPerGallon()
+	{
+		return milesPerGallon;
+	}
+double Car::getVehiclePrice()
+	{
+		return vehiclePrice;
+	}
 #endif
