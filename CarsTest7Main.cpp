@@ -17,11 +17,17 @@ void search_Cars(int*, Car* *cars, int*);
 int main()
 	{
 		int size = 100;
+		int count = 0;
+	
 		Car *cars[size];
 		cars[0] = new Truck("Truck", "Toyota", "Tacoma", 2020, 6, 5, 6, 18.8, 36599, 33.5, 6800, 6.5);
+		count++;
 		cars[1] = new Performance("Performance", "Porsche", "911", 2020, 6, 2, 8, 20.5, 85999, 3.5, 2700, "RWD");
+		count++;		
 		cars[2] = new Sedan("Sedan", "Toyota", "Avalon", 2020, 4, 5, 8, 32.5, 29689, "Cloth", "No", 23);	
+		count++;		
 		cars[3] = new Luxury("Luxury", "Lexus", "LX 570", 2020, 8, 8, 8, 13.5, 92775, "No", "Yes", "CarPlay");
+		count++;		
 		/*            
 		string data;
 		for(int i=0;i<100;i++){
@@ -68,7 +74,7 @@ int main()
 		//cout << "First Car's type is: " << cars[0] -> getVehicleType() << endl;
 		
 		
-		int count = 4;
+		//int count = 4;
 		//int size = 100;
 		//Car *cars[size];
 		menu_Selection(&size, &*cars, &count);
@@ -96,7 +102,7 @@ void menu_Selection(int* size, Car* *cars, int* count){
 		switch(choice){
 			case 1: {
 				system("CLS");
-				add_Cars(size, &*cars, count);
+				*count = add_Cars(size, &*cars, count);
 				system("CLS");
 				break;
 			}
