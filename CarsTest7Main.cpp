@@ -71,7 +71,7 @@ int main()
 		int count = 4;
 		//int size = 100;
 		//Car *cars[size];
-		//menu_Selection(&size, &*cars, &count);
+		menu_Selection(&size, &*cars, &count);
 		return 0;
 	}
 	
@@ -95,6 +95,7 @@ void menu_Selection(int* size, Car* *cars, int* count){
 		choice = menu();
 		switch(choice){
 			case 1: {
+				system("CLS");
 				add_Cars(size, &*cars, count);
 				system("CLS");
 				break;
