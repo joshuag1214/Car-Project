@@ -10,7 +10,7 @@ using namespace std;
 int menu();
 void menu_Selection(int*, Car* *cars, int*);
 void import_Cars(int*, Car* *cars, int*);
-void add_Cars(int*, Car* *cars, int*);
+int add_Cars(int*, Car* *cars, int*);
 void view_Cars(int*, Car* *cars, int*);
 void search_Cars(int*, Car* *cars, int*);
 
@@ -130,9 +130,196 @@ void import_Cars(){
 	
 }
 
-void add_Cars(int* size, Car* *cars, int* count){
+/*void add_Cars(int* size, Car* *cars, int* count){
 	
-}
+}*/
+
+int add_Cars(int* size, Car* *cars, int* count)
+	{
+		int selection, i = 0, arrayPos = 0;
+		string make, model, driveTrain, seat, hybrid, selfDrive, WiFi, infotainment;
+		int year, cylinders, seats, gears, tire, towing, weight;
+		double mpg, price, bed, accel, trunk;
+		
+		cout	<< "Add New Car to System" << endl
+				<< "---------------------------------------" << endl
+				<< "1. Truck" << endl
+				<< "2. Performance" << endl
+				<< "3. Sedan" << endl
+				<< "4. Luxury" << endl << endl
+				<< "Enter your choice: " << endl;
+		cin		>> selection;
+		
+		switch(selection){
+			case 1:
+				{
+					system("CLS");
+					
+					cout	<< "Add New Truck" << endl
+							<< "---------------------------------------" << endl
+							<< "Enter Make: ";
+					cin		>> make;
+					cout	<< "Enter Model: ";
+					cin 	>> model;
+					cout 	<< "Enter Year: ";
+					cin		>> year;
+					cout	<< "Enter Engine Cylinders: ";
+					cin		>> cylinders;
+					cout	<< "Enter Number of Seats: ";
+					cin		>> seats;
+					cout	<< "Enter Transmission Gears: ";
+					cin		>> gears;
+					cout	<< "Enter MPG: ";
+					cin		>> mpg;
+					cout	<< "Enter Price: $";
+					cin		>> price;
+					cout	<< "Enter Tire Size: ";
+					cin		>> tire;
+					cout	<< "Enter Towing Capacity: ";
+					cin		>> towing;
+					cout	<< "Enter Bed Length: ";
+					cin		>> bed;
+					
+					for(i; i < *count; i++)
+						{
+							arrayPos++;
+						}
+						
+					cars[arrayPos] = new Truck("Truck", make, model, year, cylinders, seats, gears, mpg, price, tire, towing, bed);
+					*count++;
+					
+					system("PAUSE");
+					system("CLS");
+					break;
+				}
+				
+			case 2:
+				{
+					system("CLS");
+					
+					cout	<< "Add New Performance Car" << endl
+							<< "---------------------------------------" << endl
+							<< "Enter Make: ";
+					cin		>> make;
+					cout	<< "Enter Model: ";
+					cin 	>> model;
+					cout 	<< "Enter Year: ";
+					cin		>> year;
+					cout	<< "Enter Engine Cylinders: ";
+					cin		>> cylinders;
+					cout	<< "Enter Number of Seats: ";
+					cin		>> seats;
+					cout	<< "Enter Transmission Gears: ";
+					cin		>> gears;
+					cout	<< "Enter MPG: ";
+					cin		>> mpg;
+					cout	<< "Enter Price: $";
+					cin		>> price;
+					cout	<< "Enter 0-60 Time: ";
+					cin		>> accel;
+					cout	<< "Enter Curb Weight: ";
+					cin		>> weight;
+					cout	<< "Enter Drivetrain Type (FWD/RWD/AWD): ";
+					cin		>> driveTrain;
+					
+					for(i; i < *count; i++)
+						{
+							arrayPos++;
+						}	
+							
+					cars[arrayPos] = new Performance("Performance", make, model, year, cylinders, seats, gears, mpg, price, accel, weight, driveTrain);
+					*count++;
+					
+					system("PAUSE");
+					system("CLS");
+					break;
+				}
+			
+			case 3:
+				{
+					system("CLS");
+					
+					cout	<< "Add New Sedan" << endl
+							<< "---------------------------------------" << endl
+							<< "Enter Make: ";
+					cin		>> make;
+					cout	<< "Enter Model: ";
+					cin 	>> model;
+					cout 	<< "Enter Year: ";
+					cin		>> year;
+					cout	<< "Enter Engine Cylinders: ";
+					cin		>> cylinders;
+					cout	<< "Enter Number of Seats: ";
+					cin		>> seats;
+					cout	<< "Enter Transmission Gears: ";
+					cin		>> gears;
+					cout	<< "Enter MPG: ";
+					cin		>> mpg;
+					cout	<< "Enter Price: $";
+					cin		>> price;
+					cout	<< "Enter Seat Material: ";
+					cin		>> seat;
+					cout	<< "Is this a Hybrid Vehicle? (Yes/No): ";
+					cin		>> hybrid;
+					cout	<< "Enter Trunk Capacity: ";
+					cin		>> trunk;
+					
+					for(i; i < *count; i++)
+						{
+							arrayPos++;
+						}	
+							
+					cars[arrayPos] = new Sedan("Sedan", make, model, year, cylinders, seats, gears, mpg, price, seat, hybrid, trunk);
+					*count++;
+					
+					system("PAUSE");
+					system("CLS");
+					break;
+				}
+			case 4:
+				{
+					system("CLS");
+					
+					cout	<< "Add New Luxury Car" << endl
+							<< "---------------------------------------" << endl
+							<< "Enter Make: ";
+					cin		>> make;
+					cout	<< "Enter Model: ";
+					cin 	>> model;
+					cout 	<< "Enter Year: ";
+					cin		>> year;
+					cout	<< "Enter Engine Cylinders: ";
+					cin		>> cylinders;
+					cout	<< "Enter Number of Seats: ";
+					cin		>> seats;
+					cout	<< "Enter Transmission Gears: ";
+					cin		>> gears;
+					cout	<< "Enter MPG: ";
+					cin		>> mpg;
+					cout	<< "Enter Price: $";
+					cin		>> price;
+					cout	<< "Does this car have Self Driving? (Yes/No): ";
+					cin		>> selfDrive;
+					cout	<< "Does this car have Wi-Fi Connectivity? (Yes/No): ";
+					cin		>> WiFi;
+					cout	<< "Enter Infotainment System: ";
+					cin		>> infotainment;
+					
+					for(i; i < *count; i++)
+						{
+							arrayPos++;
+						}	
+							
+					cars[arrayPos] = new Luxury("Luxury", make, model, year, cylinders, seats, gears, mpg, price, selfDrive, WiFi, infotainment);
+					*count++;
+					
+					system("PAUSE");
+					system("CLS");
+					break;
+				}
+		}
+		return *count;
+	}
 
 void view_Cars(int* size, Car* *cars, int* count){
 	for(int i = 0; i < *count; i++)
